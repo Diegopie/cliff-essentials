@@ -1,0 +1,25 @@
+{
+  "short_name": "Cliff Essentials",
+  "name": "Create Cliff Essentials Printouts",
+  "icons": [
+    {
+      "src": "/icons/favicon.ico",
+      "sizes": "32x32 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/icons/android-chrome-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/icons/android-chrome-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#bfd8ff",
+  "background_color": "#ffffff"
+}

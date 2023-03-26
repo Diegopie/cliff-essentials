@@ -1,0 +1,23 @@
+.App-showOnPrint {
+  display: none !important;
+}
+
+#invisible,#reservationNumberPrintOut,#soldBy {
+  display: none;
+}
+
+
+@media print {
+  .App-hideOnPrint, #buttons,#orderOptions, .noprint {
+      display: none
+  }
+
+  .App-showOnPrint, #invisible,#reservationNumberPrintOut,#soldBy {
+      display: block !important;
+  }
+}
+
+@page {
+  size: auto;
+  margin: 0
+}
