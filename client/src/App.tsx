@@ -1,6 +1,4 @@
 import { useState } from 'react';
-import accounting from 'accounting';
-import Select from 'react-select'
 import pricingData from './data/essentialPrices';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -8,6 +6,7 @@ import FormInput from './components/FormInputs';
 import SelectContainer from './components/SelectContainer';
 import PrintClearButton from './components/PrintClearButtons';
 import SelectTable from './components/SelectTable';
+import Form from './components/Form';
 
 
 
@@ -16,6 +15,7 @@ function App() {
   const [orderItems, setOrderItems] = useState([]);
   const [employeeName, setEmployeeName] = useState('');
   const [reservationNumber, setReservationNumber] = useState('');
+  const [roomNumber, setRoomNumber] = useState('');
 
   return (
     <main className='container'>
@@ -26,18 +26,7 @@ function App() {
       <h4 className='display-4 text-center' style={{ fontSize: 14 }}>Sold By: {employeeName} {new Date().toLocaleString()}</h4>
 
       {/* Form Inputs */}
-      <section className='App-hideOnPrint'>
-        <FormInput
-          type={'employee'}
-          state={employeeName}
-          setState={setEmployeeName}
-        />
-        <FormInput
-          type={'reservation'}
-          state={reservationNumber}
-          setState={setReservationNumber}
-        />
-      </section>
+      <Form />
 
       {
         // If employeeName is empty string or resNumber is not 6 length, return null
