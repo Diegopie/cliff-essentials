@@ -6,16 +6,16 @@ import FormInput from './components/FormInputs';
 import SelectContainer from './components/SelectContainer';
 import PrintClearButton from './components/PrintClearButtons';
 import SelectTable from './components/SelectTable';
-import Form from './components/Form';
+import {Form} from './components/Form';
 
 
 
 function App() {
 
-  const [orderItems, setOrderItems] = useState([]);
-  const [employeeName, setEmployeeName] = useState('');
-  const [reservationNumber, setReservationNumber] = useState('');
-  const [roomNumber, setRoomNumber] = useState('');
+  const [orderItems, setOrderItems] = useState<any>([]);
+  const [employeeName, setEmployeeName] = useState<string>('');
+  const [reservationNumber, setReservationNumber] = useState<string>('');
+  const [roomNumber, setRoomNumber] = useState<string>('');
 
   return (
     <main className='container'>
@@ -26,7 +26,11 @@ function App() {
       <h4 className='display-4 text-center' style={{ fontSize: 14 }}>Sold By: {employeeName} {new Date().toLocaleString()}</h4>
 
       {/* Form Inputs */}
-      <Form />
+      <Form
+        employeeState={{stateValue: employeeName, setState: setEmployeeName}}
+        reservationState={{stateValue: reservationNumber, setState: setReservationNumber}}
+        roomState={{stateValue: roomNumber, setState: setRoomNumber}}
+      />
 
       {
         // If employeeName is empty string or resNumber is not 6 length, return null

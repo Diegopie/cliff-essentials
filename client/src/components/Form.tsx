@@ -1,24 +1,36 @@
 import FormInput from "./FormInputs";
 
-const Form = () => {
+export type FormState = {
+    stateValue: string, 
+    setState: (arg: string) => string | void
+}
+
+interface FormProps {
+    employeeState: FormState,
+    reservationState: FormState,
+    roomState: FormState
+}
+
+export const Form = (props: FormProps) => {
+
+    console.log(props);
 
     return (
-        <section className="flex justify-between">
-            <article className="mt-3 columns-1">
+        <section className="flex justify-evenly">
+            <article className="mt-3 container columns-1">
                 <FormInput
                     placeholder={'Employee Name'}
-                // state={employeeName}
-                // setState={setEmployeeName}
+                    state={props.employeeState}
                 />
                 <article className="mt-3 columns-2">
                     <FormInput
                         placeholder={'Reservation Number'}
-                    // state={reservationNumber}
+                    state={props.reservationState}
                     // setState={setReservationNumber}
                     />
                     <FormInput
                         placeholder={'Room Number'}
-                    //   state={roomNumber}
+                      state={props.roomState}
                     //   setState={setRoomNumber}
                     />
                 </article>
@@ -26,5 +38,3 @@ const Form = () => {
         </section>
     )
 }
-
-export default Form;
