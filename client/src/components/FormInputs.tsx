@@ -28,7 +28,8 @@ const FormInput = (props: IFormInputProps) => {
         <div className="flex">
             <input
                 type="text"
-                className="form-control"
+                // BS
+                className="appearance-none border border-blue-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-500"
                 placeholder={props.placeholder}
                 value={props.state.stateValue}
                 onChange={(e) => {
@@ -38,7 +39,7 @@ const FormInput = (props: IFormInputProps) => {
             />
             {
                 props.state.stateValue === '' ? null :
-                    <article className="relative">
+                    <article className="relative App-hideOnPrint">
                         <button title={`Copy ${props.placeholder} to Clipboard`} className="ml-2 p-1"
                             onClick={handleClick}
                         >

@@ -12,9 +12,9 @@ const SelectTable = (props) => {
 
     return (
         <>
-            <div className="row">
-                <div className="offset-2 col-8">
-                    <table className='table table-border table-hover'>
+            <div className="container mt-4">
+                <div className="">
+                    <table className='table w-full justify-start text-center'>
                         <thead>
                             <tr>
                                 <th className='App-hideOnPrint'></th>
@@ -22,24 +22,24 @@ const SelectTable = (props) => {
                                 <th>Price</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody className="">
                             {props.orderItems.sort(alphebitize).map((item) => {
-                                console.log(item);
+                                // console.log(item);
                                 return (
-                                    <tr>
+                                    <tr className="">
                                         <td
                                             style={{ cursor: 'pointer' }}
-                                            className='text-danger App-hideOnPrint'
+                                            className='text-red-600 hover:bg-red-600 hover:text-white focus:text-white focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm dark:bg-red-600 dark:hover:bg-red-700 focus:outline-none dark:focus:ring-red-800 App-hideOnPrint'
                                             onClick={() => {
                                                 props.setOrderItems(props.orderItems.filter(i => i.id !== item.id))
                                             }}
                                         >
                                             DELETE
                                         </td>
-                                        <td className="col-8">
+                                        <td>
                                             {item.value}
                                         </td>
-                                        <td className="col-8">
+                                        <td>
                                             {accounting.formatMoney(item.price)}
                                         </td>
                                     </tr>
@@ -49,12 +49,10 @@ const SelectTable = (props) => {
                     </table>
                 </div>
             </div>
-            <div className="row mt-3">
-                <div className="offset-2 col-8">
+            <div className="mt-5 mr-9 flex justify-end">
                     <p>
                         <span style={{ fontWeight: 'bold' }}>Total:</span> {accounting.formatMoney(props.orderItems.map(item => item.price).reduce((prev, curr) => prev + curr, 0))}
                     </p>
-                </div>
             </div>
         </>
     )
