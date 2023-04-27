@@ -1,4 +1,3 @@
-import { MouseEvent } from "react";
 import { FormState } from "./Form";
 
 interface IFormInputProps {
@@ -12,10 +11,10 @@ const FormInput = (props: IFormInputProps) => {
         e.preventDefault();
         try {
             await navigator.clipboard.writeText(props.state.stateValue);
-            console.log('Content copied to clipboard');
-          } catch (err) {
+            console.log(`${props.state.stateValue} copied to clipboard`);
+        } catch (err) {
             console.error('Failed to copy: ', err);
-          }
+        }
     }
 
     return (
@@ -30,11 +29,14 @@ const FormInput = (props: IFormInputProps) => {
                     props.state.setState(e.target.value);
                 }}
             />
-            <button className="ml-2 rounded-sm bg-slate-300"
-                onClick={handleClick}
-            >
-                <img src='../assets/clipboard.svg'/>
-            </button>
+            {
+                props.state.stateValue === '' ? null :
+                <button title={`Copy ${props.placeholder} to Clipboard`} className="ml-2 p-1"
+                    onClick={handleClick}
+                >
+                    <img src={'assets/clipboard.png'} className="h-8" />
+                </button>
+            }
         </div>
     )
 }

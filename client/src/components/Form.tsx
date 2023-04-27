@@ -13,8 +13,6 @@ interface FormProps {
 
 export const Form = (props: FormProps) => {
 
-    console.log(props);
-
     return (
         <section className="flex justify-evenly">
             <article className="mt-3 container columns-1">
