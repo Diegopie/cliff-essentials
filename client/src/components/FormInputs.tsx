@@ -43,7 +43,7 @@ const FormInput = (props: IFormInputProps) => {
                         <button title={`Copy ${props.placeholder} to Clipboard`} className="ml-2 p-1"
                             onClick={handleClick}
                         >
-                            <img src={'assets/clipboard.png'} className="h-7" />
+                            <img src={'assets/clipboard.svg'} className="h-7" />
                         </button>
                         <div id={props.placeholder} className="
                         absolute right-0 top-0 left-9 border  bg-white rounded-md offset-1 w-16 text-center hidden">Copied!</div>

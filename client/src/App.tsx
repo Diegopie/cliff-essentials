@@ -1,21 +1,19 @@
 import { useEffect, useState, FC } from 'react';
-import pricingData from './data/essentialPrices';
 import './App.css';
-// import 'bootstrap/dist/css/bootstrap.min.css';
-import FormInput from './components/FormInputs';
 import SelectContainer from './components/SelectContainer';
 import PrintClearButton from './components/PrintClearButtons';
 import SelectTable from './components/SelectTable';
 import { Form } from './components/Form';
+import { Header } from './components/Header';
 
 
 
 const App: FC = () => {
 
   const [orderItems, setOrderItems] = useState<any>([]);
-  const [employeeName, setEmployeeName] = useState<string>('DogPie');
-  const [reservationNumber, setReservationNumber] = useState<string>('123456');
-  const [roomNumber, setRoomNumber] = useState<string>('C420');
+  const [employeeName, setEmployeeName] = useState<string>('');
+  const [reservationNumber, setReservationNumber] = useState<string>('');
+  const [roomNumber, setRoomNumber] = useState<string>('');
 
   const [formComplete, setFormComplete] = useState<boolean>(false);
 
@@ -33,10 +31,9 @@ const App: FC = () => {
 
       <br />
       {/* Header */}
-      <header className='text-center'>
-        <h1 className='font-instrument text-6xl mt-5 mb-4'>Cliff Essentials</h1>
-        <p className='text-xs mb-3'>Sold By: {employeeName} {new Date().toLocaleString()}</p>
-      </header>
+      <Header 
+        employeeName={employeeName}
+      />
       {/* Form Inputs */}
       <Form
         employeeState={{ stateValue: employeeName, setState: setEmployeeName }}

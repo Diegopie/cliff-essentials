@@ -26,7 +26,7 @@ const SelectTable = (props) => {
                             {props.orderItems.sort(alphebitize).map((item) => {
                                 // console.log(item);
                                 return (
-                                    <tr className="">
+                                    <tr key={crypto.randomUUID()}>
                                         <td
                                             style={{ cursor: 'pointer' }}
                                             className='text-red-600 hover:bg-red-600 hover:text-white focus:text-white focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm dark:bg-red-600 dark:hover:bg-red-700 focus:outline-none dark:focus:ring-red-800 App-hideOnPrint'

@@ -16,7 +16,7 @@ const PrintClearButton = (props) => {
                             props.setEmployeeName('');
                             props.setReservationNumber('');
                         }}
-                    > Clear </button>
+                    > Clear All </button>
                 </article>
             </section>
             <br />

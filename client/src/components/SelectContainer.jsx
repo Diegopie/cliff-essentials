@@ -3,9 +3,9 @@ import pricingData from '../data/essentialPrices'
 
 const SelectContainer = (props) => {
 
-    if(!props.formComplete) {
-        return null;
-    }
+    // if(!props.formComplete) {
+    //     return null;
+    // }
 
     return (
         <section className="mt-3 App-hideOnPrint">
