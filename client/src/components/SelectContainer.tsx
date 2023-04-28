@@ -1,7 +1,13 @@
 import Select from 'react-select'
-import pricingData from '../data/essentialPrices'
+import {IPricingData, pricingData} from '../data/essentialPrices'
 
-const SelectContainer = (props) => {
+interface ISelectContainerProps {
+    formComplete: boolean,
+    orderItems: IPricingData[],
+    setOrderItems: (arg: object) => [] | void
+}
+
+const SelectContainer = (props:ISelectContainerProps) => {
 
     // if(!props.formComplete) {
     //     return null;

@@ -1,5 +1,8 @@
+interface IHeaderProps { 
+    employeeName: string
+}
 
-export const Header = (props) => {
+export const Header = (props: IHeaderProps) => {
 
     const handleClick = async (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();

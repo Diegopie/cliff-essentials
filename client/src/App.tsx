@@ -3,14 +3,14 @@ import './App.css';
 import SelectContainer from './components/SelectContainer';
 import PrintClearButton from './components/PrintClearButtons';
 import SelectTable from './components/SelectTable';
-import { Form } from './components/Form';
+import { Form } from './components/Form/Form';
 import { Header } from './components/Header';
 
 
 
 const App: FC = () => {
 
-  const [orderItems, setOrderItems] = useState<any>([]);
+  const [orderItems, setOrderItems] = useState<[]>([]);
   const [employeeName, setEmployeeName] = useState<string>('');
   const [reservationNumber, setReservationNumber] = useState<string>('');
   const [roomNumber, setRoomNumber] = useState<string>('');

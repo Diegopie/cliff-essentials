@@ -1,6 +1,12 @@
 import accounting from "accounting";
+import { IPricingData } from "../data/essentialPrices";
 
-const SelectTable = (props) => {
+interface ISelectTableProps {
+    orderItems: IPricingData[],
+    setOrderItems: (arg: object) => [] | void
+}
+
+const SelectTable = (props: ISelectTableProps) => {
 
     function alphebitize(a, b) {
         // if a is greate than b in the array, increase index placement in array;
@@ -23,7 +29,7 @@ const SelectTable = (props) => {
                             </tr>
                         </thead>
                         <tbody className="">
-                            {props.orderItems.sort(alphebitize).map((item) => {
+                            {props.orderItems.sort(alphebitize).map(item => {
                                 // console.log(item);
                                 return (
                                     <tr key={crypto.randomUUID()}>

@@ -1,4 +1,13 @@
-const pricingData = [
+export interface IPricingData {
+    value: string,
+    label: string,
+    price: number
+    id?: string
+}
+
+
+
+export const pricingData: IPricingData[] = [
     { value: 'Aquafina Water 33.8oz', label: 'Aquafina Water 33.8oz - $5.30', price: 5.30 },
     { value: 'Gatorade Cool Blue', label: 'Gatorade Cool Blue - $5.10', price: 5.10 },
     { value: 'Gatorade Lemon Lime', label: 'Gatorade Lemon Lime - $5.10', price: 5.10 },
@@ -62,5 +71,3 @@ const pricingData = [
     { value: 'Tide Laundry Detergent', label: 'Tide Laundry Detergent - $1.72', price: 1.72 },
     { value: 'Little Hotties Hand Warmers', label: 'Little Hotties Hand Warmers - $3.86', price: 3.86 },
 ]
-
-export default pricingData;
