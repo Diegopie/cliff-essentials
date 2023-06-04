@@ -25,7 +25,6 @@ I started working at a hotel who has an after hours sundries shop for late night
     - [Client](#client)
     - [Bugs](#bugs)
     - [Future Development](#future-development)
-    - [Resources](#resources)
     - [Contact](#contact)
     - [License](#license)
 
@@ -91,7 +90,7 @@ const handleClick = async (e: React.MouseEvent<HTMLButtonElement>) => {
                 document.getElementById(props.placeholder).classList.add('hidden')
             }, 2500);
 
-            // console.log(`${props.state.stateValue} copied to clipboard`);
+            // console.log(`${props.state.stateValue} copied to clipboard`);git 
         } catch (err) {
             console.error('Failed to copy: ', err);
         }
@@ -107,10 +106,6 @@ I used the newer crypto JS API for giving mapped JSX content a unique key, but s
 ### Future Development
 
 The core issue with the previous developer's app was that new staff could not update the prices. This is very easily fixed with a simple database integration. My boss said they may finally get a Square setup for the shop so I'm holding off development of this feature for now
-
-### Resources
-
-<!-- Adobe Icons: [freepik.com](https://www.freepik.com) -->
 
 ### Contact
 
