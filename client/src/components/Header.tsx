@@ -37,7 +37,7 @@ export const Header = (props: IHeaderProps) => {
                             <button title={'Copy City Ledger Folio to Clipboard'} className="p-1 pb-3 flex"
                                 onClick={handleClick}
                             >
-                                <img src={'assets/clipboard.svg'} className="h-3" />
+                                <img src={'assets/clipboard.svg'} alt='Copy Icon' className="h-3" />
                             </button>
                             <div id='ledgerCopy' className="
                         absolute text-xs right-0 top-0 left-4 border  bg-white rounded-md offset-1 w-16 text-center hidden">Copied!</div>

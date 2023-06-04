@@ -1,7 +1,7 @@
 import FormInput from "./FormInputs";
 
 export type FormState = {
-    stateValue: string, 
+    stateValue: string,
     setState: (arg: string) => string | void
 }
 
@@ -23,12 +23,12 @@ export const Form = (props: FormProps) => {
                 <article className="mt-3 columns-2">
                     <FormInput
                         placeholder={'Reservation Number'}
-                    state={props.reservationState}
+                        state={props.reservationState}
                     // setState={setReservationNumber}
                     />
                     <FormInput
                         placeholder={'Room Number'}
-                      state={props.roomState}
+                        state={props.roomState}
                     //   setState={setRoomNumber}
                     />
                 </article>

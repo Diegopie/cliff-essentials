@@ -76,7 +76,27 @@ Backend – Future Development
 
 ### Client
 
-This app is rendered using React. My main goal was to make it much easier to take a customer's order and give them a total. I then wanted to simplify the process to charge the appropriate account.
+This app is rendered using React. My main goal was to make it much easier to take a customer's order and give them a total. This is also an installable PWA so staff can see it as it's own app.
+I then wanted to simplify the process to charge the appropriate account. This was mostly achieved by throwing a ton of Copy to Clipboard buttons to the page. This was my CSS light approach to handling that 😅
+
+```js
+const handleClick = async (e: React.MouseEvent<HTMLButtonElement>) => {
+        e.preventDefault();
+        try {
+            await navigator.clipboard.writeText(props.state.stateValue);
+
+            document.getElementById(props.placeholder).classList.remove('hidden');
+
+            setTimeout(() => {
+                document.getElementById(props.placeholder).classList.add('hidden')
+            }, 2500);
+
+            // console.log(`${props.state.stateValue} copied to clipboard`);
+        } catch (err) {
+            console.error('Failed to copy: ', err);
+        }
+    }
+```
 
 > [Back To Client](#client) || [Back To Development](#development)
 
