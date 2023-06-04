@@ -1,4 +1,5 @@
 import accounting from "accounting";
+import { v4 as uuidv4 } from 'uuid';
 import { IPricingData } from "../data/essentialPrices";
 
 interface ISelectTableProps {
@@ -8,8 +9,8 @@ interface ISelectTableProps {
 
 const SelectTable = (props: ISelectTableProps) => {
 
-    function alphebitize(a, b) {
-        // if a is greate than b in the array, increase index placement in array;
+    function alphabetize(a, b) {
+        // if a is greater than b in the array, increase index placement in array;
         // if a < b in the array, decrease index placement
         // if neither condition is met, return 0 to leave at current index placement
         return (a.label > b.label) ? 1 : ((a.label < b.label) ? -1 : 0)
@@ -29,10 +30,10 @@ const SelectTable = (props: ISelectTableProps) => {
                             </tr>
                         </thead>
                         <tbody className="">
-                            {props.orderItems.sort(alphebitize).map(item => {
+                            {props.orderItems.sort(alphabetize).map(item => {
                                 // console.log(item);
                                 return (
-                                    <tr key={crypto.randomUUID()}>
+                                    <tr key={uuidv4()}>
                                         <td
                                             style={{ cursor: 'pointer' }}
                                             className='text-red-600 hover:bg-red-600 hover:text-white focus:text-white focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm dark:bg-red-600 dark:hover:bg-red-700 focus:outline-none dark:focus:ring-red-800 App-hideOnPrint'
